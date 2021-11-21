@@ -5,13 +5,13 @@ import { CreateProductUseCase } from "./CreateProductUseCase";
 
 class CreateProductController {
 	async handle(request: Request, response: Response): Promise<Response> {
-		const { name, cost, description } = request.body;
+		const { name, value, description } = request.body;
 
 		const createProductUseCase = container.resolve(CreateProductUseCase);
 
 		const product = await createProductUseCase.execute({
 			name,
-			cost,
+			value,
 			description,
 		});
 
