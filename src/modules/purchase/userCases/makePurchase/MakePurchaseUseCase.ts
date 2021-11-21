@@ -1,4 +1,4 @@
-import { injectable } from 'tsyringe';
+import { inject, injectable } from 'tsyringe';
 import ICreatePurchase from '../../dtos/ICreatePurchase';
 import { Purchase } from '../../infra/typeorm/entities/Purchase';
 import { IMakePurchase } from '../../repositories/IMakePurchase';
@@ -6,6 +6,7 @@ import { IMakePurchase } from '../../repositories/IMakePurchase';
 @injectable()
 class MakePurchaseUseCase {
 	constructor(
+		@inject("PurchaseRepository")
 		private purchaseRepository: IMakePurchase
 	) { }
 
