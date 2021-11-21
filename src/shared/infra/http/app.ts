@@ -2,11 +2,11 @@ import "reflect-metadata";
 import express, { NextFunction, Request, Response } from "express";
 
 import "express-async-errors";
-import { AppError } from '@shared/Errors/AppError';
 import { router } from './routes';
 
 import "../../container";
 import "../typeorm/index";
+import { AppError } from '@shared/Errors/AppError';
 
 const app = express();
 

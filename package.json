@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register  --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
     "test": "NODE_ENV=test jest",
     "seed:admin": "ts-node-dev src/shared/infra/typeorm/seeds/admin.ts"
@@ -28,6 +28,7 @@
     "eslint-plugin-import-helpers": "^1.1.0",
     "eslint-plugin-prettier": "^3.4.0",
     "jest": "^27.2.0",
+    "nodemon": "^2.0.15",
     "prettier": "^2.3.0",
     "ts-jest": "^27.0.5",
     "ts-node-dev": "^1.1.6",

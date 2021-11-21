@@ -1,5 +1,6 @@
 import {
 	Column,
+	CreateDateColumn,
 	Entity,
 	PrimaryColumn,
 	UpdateDateColumn,
@@ -12,10 +13,13 @@ class Users {
 	id: string;
 
 	@Column()
-	name: string;
+	user_name: string;
+
+	@CreateDateColumn()
+	created_at: Date;
 
 	@UpdateDateColumn()
-	created_at: Date;
+	updated_at: Date;
 
 	constructor() {
 		if (!this.id) {

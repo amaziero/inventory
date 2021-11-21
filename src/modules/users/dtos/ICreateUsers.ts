@@ -1,3 +1,3 @@
 export default interface ICreateUsers {
-	name: string;
+	user_name: string;
 }

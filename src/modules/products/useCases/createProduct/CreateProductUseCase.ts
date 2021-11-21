@@ -3,7 +3,7 @@ import { inject, injectable } from "tsyringe";
 import { ProductsList } from "@modules/products/infra/typeorm/entities/ProductsList";
 
 import { IProductsRepository } from "../../repositories/IProductsRepository";
-import { AppError } from '@shared/Errors/AppError';
+import { AppError } from '../../../../shared/Errors/AppError';
 
 interface IRequest {
 	name: string;

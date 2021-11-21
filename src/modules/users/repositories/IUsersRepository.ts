@@ -3,7 +3,7 @@ import { Users } from '../infra/typeorm/entities/Users';
 
 interface IUsersRepository {
 	create(data: ICreateUsers): Promise<Users>
-	findByName(name: string): Promise<Users | undefined>
+	findByName(data: ICreateUsers): Promise<Boolean | undefined>
 }
 
 export { IUsersRepository }

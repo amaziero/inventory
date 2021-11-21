@@ -1,3 +1,4 @@
+import { AppError } from '@shared/Errors/AppError';
 import ICreateUsers from '../../dtos/ICreateUsers'
 import { Users } from '../../infra/typeorm/entities/Users'
 import { IUsersRepository } from "../IUsersRepository"
@@ -15,10 +16,14 @@ class UsersRepositoryInMemory implements IUsersRepository {
 		return user;
 	}
 
-	async findByName(name: string): Promise<Users | undefined> {
-		const userExists = this.users.find(user => user.name === name)
+	async findByName({ user_name }: ICreateUsers): Promise<Boolean | undefined> {
+		const userExists = this.users.find(user => user.user_name === user_name)
 
-		return userExists;
+		if (userExists === undefined) {
+			return true;
+		}
+
+		throw new AppError("User created")
 	}
 }
 
