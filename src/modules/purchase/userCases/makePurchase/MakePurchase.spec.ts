@@ -29,12 +29,7 @@ describe("makePurchase methods", () => {
 		const newProduct = await productRepositoryInMemory.create(product);
 		const user = await userRepositoryInMemory.create({ user_name: 'Test' })
 
-		console.log(newProduct.id)
-		console.log(user.id)
-
 		const purchase = await makePurchaseUseCase.execulte({ id_product: newProduct.id, id_user: user.id })
-		console.log(purchase)
-
 
 		expect(purchase).toHaveProperty('id')
 	})

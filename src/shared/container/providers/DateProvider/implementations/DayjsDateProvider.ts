@@ -13,6 +13,28 @@ class DayjsDateProvider implements IDateProvider {
     return dayjs(end_date_utc).diff(start_date_utc, "hours");
   }
 
+  async isAfter(start_date: Date, start_date_find: Date): Promise<boolean> {
+    const startDate = dayjs(start_date)
+    const startDateFind = dayjs(start_date_find)
+
+    if (startDate.isAfter(startDateFind)) {
+      return true
+    }
+
+    return false
+  }
+
+  async isBefore(end_date: Date, end_date_find: Date): Promise<boolean> {
+    const endDate = dayjs(end_date)
+    const endDateFind = dayjs(end_date_find)
+
+    if (endDate.isBefore(endDateFind)) {
+      return true
+    }
+
+    return false
+  }
+
   convertToUTC(date: Date): string {
     return dayjs(date).utc().local().format();
   }

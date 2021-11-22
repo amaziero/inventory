@@ -25,6 +25,10 @@ class UsersRepositoryInMemory implements IUsersRepository {
 
 		throw new AppError("User created")
 	}
+
+	async findAllUsers(): Promise<Users[] | undefined> {
+		return this.users;
+	}
 }
 
 export { UsersRepositoryInMemory }
